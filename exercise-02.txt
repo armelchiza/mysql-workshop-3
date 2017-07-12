@@ -1,0 +1,16 @@
+
+mysql> SELECT COUNT(*) FROM ENTRY
+    -> WHERE subtype = 'phone'
+    -> AND contentLineOne LIKE '(3%';
+
+
+mysql> SELECT COUNT(*) FROM ENTRY
+    -> WHERE subtype = 'phone'
+    -> AND type = 'home'
+    -> AND NOT ((LENGTH(SUBSTRING_INDEX(contentLineOne,'5', 1))) > 1);
+
+mysql> SELECT COUNT(*) FROM ENTRY
+    -> WHERE subtype = 'phone'
+    -> AND type = 'work'
+    -> AND contentLineOne LIKE '1-%';
+

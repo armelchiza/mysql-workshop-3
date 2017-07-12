@@ -1,1 +1,11 @@
 --
+
+mysql> select count(accountID), accountID FROM addressbook group by accountID order by count(accountID) DESC limit 1;
+
+mysql> select accountID FROM addressbook group by accountID order by count(accountID) DESC limit 1;
+
+mysql> select accountID FROM addressbook group by accountID order by count(accountID) DESC limit 1; -- CAN ADD accountId column
+
+
+mysql> SELECT addressBookId FROM Entry GROUP BY addressBookId ORDER BY COUNT(addressBookId) DESC LIMIT 1;
+
