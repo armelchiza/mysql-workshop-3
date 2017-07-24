@@ -1,0 +1,61 @@
+SELECT country FROM Address ORDER BY country DESC;
+
+#4
+
+SELECT name FROM AddressBook WHERE AddressBook.name="Pharetra Ut Limited";
+
+
+#5
+
+mysql> SELECT email
+    -> FROM Account a
+    -> JOIN AddressBook abk on a.id = abk.accountId
+    -> WHERE abk.id=100;
++----------------------------------+
+| email                            |
++----------------------------------+
+| dapibus.quam@interdumligulaeu.ca |
++----------------------------------+
+1 row in set (0.01 sec)
+
+
+
+#6
+
+mysql> SELECT p.content AS phone_number
+    -> FROM Phone p 
+    -> JOIN Entry e
+    -> ON p.entryId=e.id WHERE
+    -> e.firstName="Charlotte" AND
+    -> e.lastName="Jenkins";
++----------------+
+| phone_number   |
++----------------+
+| (110) 167-3420 |
+| (605) 175-1334 |
++----------------+
+
+
+#7
+
+mysql> select DISTINCT (SUBSTRING_INDEX(SUBSTR(content, INSTR(content, '@') + 1),'.',1)) FROM ElectronicMail;
+
+
+#8
+
+mysql> SELECT subtype, COUNT(*) FROM Phone JOIN Entry ON Phone.entryId = Entry.id
+    -> WHERE (Entry.birthday BETWEEN '1950-10-1' AND '1960-10-1') GROUP BY subtype ORDER BY COUNT(*);
++----------+----------+
+| subtype  | COUNT(*) |
++----------+----------+
+| fax      |      134 |
+| cellular |      138 |
+| landline |      170 |
++----------+----------+
+3 rows in set (0.02 sec)
+
+>>>> VERY USEFUL TYPE OF QUERY
+
+
+#9
+

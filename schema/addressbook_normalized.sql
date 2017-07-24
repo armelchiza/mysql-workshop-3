@@ -60,7 +60,6 @@ CREATE TABLE ElectronicMail(
     entryId INT,
     type ENUM('home', 'work', 'other'),
     content VARCHAR(255)
-
 );
 
 -- -----------------------------------------------------
